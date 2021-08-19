@@ -1,0 +1,24 @@
+{
+  "name": "token-api",
+  "version": "1.0.0",
+  "description": "Api for token information sites to get the values that they need to evaluate token metrics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/credmark/token-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/credmark/token-api/issues"
+  },
+  "homepage": "https://github.com/credmark/token-api#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "web3": "^1.5.2"
+  }
+}
