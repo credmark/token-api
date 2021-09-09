@@ -1,9 +1,9 @@
-
-var express = require('express');
+const serverless = require('serverless-http');
+const express = require('express');
 
 require('dotenv').config();
 
-var app = express();
+const app = express();
 
 const Web3 = require("web3")
 
@@ -92,3 +92,11 @@ app.get('/crucible/wizard_island_avg_apy', (req, res)=>{
 app.listen(port, () =>
     console.log(`Example app listening on port ${port}!`),
 );
+
+// Use this section to run locally
+// app.listen(port, () =>
+//     console.log(`CMK app listening on port ${port}!`),
+//);
+
+// To run on API Gateway and Lambda
+module.exports.handler = serverless(app);
