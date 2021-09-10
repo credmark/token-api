@@ -50,8 +50,11 @@ app.get('/crucible/wizard_island_avg_apy', (req, res)=>{
             let remainingDurations = [];
             let dt_now = Date.now() / 1000;
             aludel_data.rewardSchedules.map((rs)=>{
-                totalRemainingRewards += rs.shares * (1- ((dt_now - rs.start) / rs.duration));
-                remainingDurations.push(parseFloat(dt_now) - parseFloat(rs.start) + parseFloat(rs.duration));
+                if (parseFloat(rs.start) + parseFloat(rs.duration) > parseFloat(dt_now))
+                {
+                    totalRemainingRewards += rs.shares * (1 - ((dt_now - rs.start) / rs.duration));
+                    remainingDurations.push(parseFloat(dt_now) - parseFloat(rs.start) + parseFloat(rs.duration));
+                }
             });
             let avgRemainingDuration = remainingDurations.reduce((a,b) => a + b, 0) / remainingDurations.length;
 
