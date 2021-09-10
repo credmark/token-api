@@ -8,12 +8,14 @@ provider:
 functions:
   app:
     handler: index.handler
+    environment:
+        INFURA_KEY: ${env:INFURA_KEY}
     events: 
       - http: 
-          path: /
+          path: /cmk/circulating_supply_raw
           method: ANY
           cors: true
       - http: 
-          path: /{proxy+}
+          path: /crucible/wizard_island_avg_apy
           method: ANY
           cors: true
