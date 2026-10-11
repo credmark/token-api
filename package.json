@@ -22,5 +22,6 @@
     "express": "^4.17.1",
     "serverless-http": "^2.7.0",
     "web3": "^4.16.0"
-  }
+  },
+  "scanNote": "manifest touched to trigger Dependabot alert re-scan; no functional change"
 }
